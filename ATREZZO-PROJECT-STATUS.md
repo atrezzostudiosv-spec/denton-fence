@@ -10,7 +10,7 @@ Atrezzo Studios creates, develops, audits and validates the site directly. No Ge
 | 1 Audit | CLOSED | Original six-page site, supplied ZIP, video and photographic archive reviewed. |
 | 2 Strategy / architecture | CLOSED FOR PROGRESSION | Fifteen planned URLs: six original pages and nine genuine service categories; SEO, copy direction, conversion and scroll score. User instructed to begin Phase 3. |
 | 3 Design | CLOSED — HOME APPROVED 2026-10-28 | User explicitly approved Home V1 visual composition and scroll. Design is frozen as the reference. Interior layouts will be adapted to their own content during Phase 4 without redesigning the Home. |
-| 4 Development | IN PROGRESS — LOCAL MULTIPAGE V1 BUILT | 15 HTML routes, 9 individual service pages, gallery with 44 original photographs transformed to WebP, approved Home V1 preserved; local in-memory browser QA passed at four widths. Full source ZIP delivered in chat; not yet synchronized to public GitHub due to image-rights/publication gate.
+| 4 Development | IN PROGRESS — LOCAL MULTIPAGE V1 BUILT | 15 HTML routes, 9 individual service pages, gallery with 44 original photographs transformed to WebP, approved Home V1 preserved; local in-memory browser QA passed at four widths. Full source ZIP delivered in chat. The `phase4-development` branch now contains the shared app and gallery interaction JavaScript; remaining HTML, CSS and original business image assets are not yet synchronized to GitHub pending the publication/rights gate.
 | 5 Validation | NOT STARTED | Production domain, forms, performance, actual Pages environment not certified. |
 | 6 Delivery | NOT STARTED | Not published as an authorized client website. |
 
