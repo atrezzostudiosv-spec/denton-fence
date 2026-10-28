@@ -10,7 +10,7 @@ Atrezzo Studios creates, develops, audits and validates the site directly. No Ge
 | 1 Audit | CLOSED | Original six-page site, supplied ZIP, video and photographic archive reviewed. |
 | 2 Strategy / architecture | CLOSED FOR PROGRESSION | Fifteen planned URLs: six original pages and nine genuine service categories; SEO, copy direction, conversion and scroll score. User instructed to begin Phase 3. |
 | 3 Design | CLOSED — HOME APPROVED 2026-10-28 | User explicitly approved Home V1 visual composition and scroll. Design is frozen as the reference. Interior layouts will be adapted to their own content during Phase 4 without redesigning the Home. |
-| 4 Development | IN PROGRESS — PLANNING/SETUP | Begin conversion of approved Home prototype into a maintainable multipage frontend and development of interior pages. No code or public images pushed as part of approval recording. |
+| 4 Development | IN PROGRESS — LOCAL MULTIPAGE V1 BUILT | 15 HTML routes, 9 individual service pages, gallery with 44 original photographs transformed to WebP, approved Home V1 preserved; local in-memory browser QA passed at four widths. Full source ZIP delivered in chat; not yet synchronized to public GitHub due to image-rights/publication gate.
 | 5 Validation | NOT STARTED | Production domain, forms, performance, actual Pages environment not certified. |
 | 6 Delivery | NOT STARTED | Not published as an authorized client website. |
 
@@ -33,4 +33,4 @@ Promotions, service-area discrepancy, valid business address and phone, ownershi
 User wrote **“aprobado”** in response to Home V1 preview. Lock its composition, approved real-image selection, branding, type hierarchy and native-scroll photo chapters. Only change with explicit request or a reproducible technical defect. This is approval of design, not permission to republish photographs from the original business on a public GitHub Pages demo, and not validation of forms or live functionality.
 
 ## Current next action
-Build the approved Home as reusable frontend source, then implement interior pages without dropping verified source content. Keep prototype/demo noindex, do not upload original gallery imagery to this PUBLIC repository until rights are verified.
+Complete GitHub source synchronization when safe to use original brand/gallery photography on PUBLIC repo or repository is made private. Recheck image provenance and run real GitHub Pages/deployment navigation and Jotform submission tests. Do not mark Phase 4 closed until repository version and browser QA match the approved Home and all 15 routes.
