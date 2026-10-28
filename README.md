@@ -1,16 +1,15 @@
-# Denton Fence — Atrezzo Studios
+# Denton Fence — Atrezzo Studios web development preview
 
-Rediseño y desarrollo web de Denton Fence, LLC.
+Non-indexed demo: https://atrezzostudiosv-spec.github.io/denton-fence/
 
-## Estado del proyecto
+**NOT a finished or authorized production customer website.**
 
-- Fase 1: auditoría del sitio original realizada.
-- Fase 2: estrategia y arquitectura desarrolladas; pendientes de validación final.
-- Fase 3: diseño visual del Home, aún no iniciado.
-- Desarrollo, validación y publicación: pendientes.
+User-approved Home V1 plus 14 internal pages, nine service pages, original Denton Fence gallery and logo, 53 WebP photographs, shared responsive CSS and JavaScript.
 
-## Principios de trabajo
+The user confirmed permission to reuse original-site imagery for this development demo on 2026-10-28. The images may not be used for other customers. Separate rights documentation was not independently verified.
 
-El contenido comercial se basa en el sitio original y documentación verificada. El diseño seguirá el manual ATREZZO WEBS — Dirección Artística y Scroll v2.0, con desarrollo directo por Atrezzo Studios.
+The original Jotform is embedded for preview only; a real successful submission and receiving destination have not been tested. Specials are not asserted current.
 
-**Este repositorio es un proyecto de desarrollo. No equivale a un sitio web listo para producción.**
+All 15 HTML documents include noindex,nofollow,noarchive and robots.txt disallows search crawling. **Noindex is not privacy control.**
+
+For full phase state and verified vs pending QA, see ATREZZO-PROJECT-STATUS.md.
