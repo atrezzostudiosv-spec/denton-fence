@@ -9,6 +9,8 @@
 .inner-hero-wash {background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.53) 54%,rgba(0,0,0,.12)),linear-gradient(0deg,rgba(0,0,0,.34),transparent 60%)!important}
 .ranch-overlay {background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.26)),linear-gradient(0deg,rgba(0,0,0,.35),transparent)!important}
 
+.service-portrait-caption {background:linear-gradient(0deg,rgba(0,0,0,.77),rgba(0,0,0,0))!important}
+
 /* Branded, editorial CTAs: intentional asymmetric edge and fine-line motion instead of template pills. */
 .button,.header-cta,.button-dark {position:relative;isolation:isolate;overflow:hidden;gap:24px;border-radius:0!important;box-shadow:none!important;letter-spacing:.115em!important;text-transform:uppercase;font-size:11px!important;font-weight:750;min-height:58px;padding:18px 26px;transition:color .35s ease,background-color .35s ease,border-color .35s ease,transform .4s cubic-bezier(.22,1,.36,1)!important}
 .button::before,.header-cta::before,.button-dark::before {content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .48s cubic-bezier(.22,1,.36,1);opacity:.7;pointer-events:none}
