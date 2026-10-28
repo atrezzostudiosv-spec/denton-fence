@@ -1,40 +1,44 @@
 # Denton Fence — ATREZZO PROJECT STATUS
 Updated: 2026-10-28
 
+## Locked scope
+Home V1 approved by the user on 2026-10-28. The subsequent user-authorized design corrections are documented below. Preserve the approved editorial direction, original brand and photos, and natural scrolling.
+
 ## Phase ledger
-1. AUDIT — CLOSED. Original six-page site, original gallery and business facts reviewed.
-2. STRATEGY — CLOSED. Fifteen-page architecture and creative scroll score.
-3. DESIGN — CLOSED. Home V1 explicitly APPROVED by user; no unrequested composition changes.
-4. DEVELOPMENT — IN VALIDATION. All 15 HTML routes, 54 authorized image assets and JS/CSS are deployed via GitHub Pages. Live Chromium smoke passed 60/60 page-width combinations and 54/54 image URLs; no JS errors or horizontal overflow in tested flows. Form-delivery acceptance is still pending.
-5. FINAL QA — PARTIAL AUTOMATED CHECKS VERIFIED. Live breakpoints, images, mobile menu, gallery filter and dialog passed. Form receipt, full accessibility/performance and legal/metadata publication checks remain pending.
-6. DELIVERY — PENDING. Client publication authorization and final launch have not been given; deployment remains a non-indexed development demo.
+| Phase | Status | Notes |
+| --- | --- | --- |
+| 1 Audit | CLOSED | Original Denton Fence content and photography catalogued. |
+| 2 Strategy | CLOSED | 15 page architecture, 9 service pages. |
+| 3 Home design | CLOSED / APPROVED | Property Lines. Personal Pride. Design changes only when explicitly requested, including this 2026-10-28 refinement. |
+| 4 Development | IN VALIDATION — REFINEMENTS DEPLOYED | PR #2 and #3 merged. Responsive photo zoom, black overlays, iconography, panoramic CTAs, gallery, custom quote forms. |
+| 5 Final QA | PARTLY VERIFIED | Automated local and live visual/interaction smoke passed; real email delivery not verified; accessibility/performance/legal final review pending. |
+| 6 Final delivery | PENDING | The site remains a noindex design preview; no authorized client production launch. |
 
-## Verified deployment evidence
-Photo import workflow success: https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40670527163
-Pull request merged: https://github.com/atrezzostudiosv-spec/denton-fence/pull/1
-GitHub Pages build/deploy success: https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40671000314
-GitHub deployment URL: https://atrezzostudiosv-spec.github.io/denton-fence/
-Main branch contains 15 HTML routes and 54 image files, 44 gallery, 9 Home, 1 original logo; the workflow verified counts. HTML contains noindex,nofollow,noarchive; robots.txt disallows crawling. Noindex does not make this URL private.
+## Refinement pass — user requested 2026-10-28
+- Replaced 131 decorative arrow characters and eliminated legacy arrow/emoticon glyphs across all 15 routes with CSS iconography. No new emoji content.
+- Replaced green photographic overlay gradients with black/charcoal (hero, photo chapters, inner-hero, ranch, CTA and photo-caption).
+- Added mobile/tablet scroll-driven restrained photographic zoom and text positioning; no scroll blocking, respects prefers-reduced-motion.
+- Refined branded buttons rather than default template-looking pills.
+- Added wide, original-image backgrounds to all inner-page CTA sections before footer.
+- Moved Home Our Work below the owner story and improved editorial photo proportions, spacing, and full gallery styling.
+- Removed Denton Fence's Jotform iframe and direct original quote link on Contact, replaced with custom Atrezzo responsive form.
+- Every Request a Quote button opens a native accessible dialog; dedicated Contact has the same fields inline for usability and no-JS fallback.
+- Demo form receiver configured for **atrezzostudiosv@gmail.com** via FormSubmit (https://formsubmit.co). Explicit demo consent and warning: the message goes to Atrezzo for testing, not Denton Fence. Business telephone remains available for actual inquiries.
+- FormSubmit response semantics are truthful: provider acceptance is never represented as confirmed inbox delivery. An 18-second AbortController timeout keeps the form responsive and retains input on failure.
 
-## Authorization and sourcing
-User explicitly confirmed on 2026-10-28 that Atrezzo can reuse original Denton Fence website photographs for this public demo. The importer uses the original site and preserves image identities. Independent written third-party rights documentation was not audited; do not reuse this gallery for other customers.
+## Verified results
+- Local branch browser regression: **304/304 PASS** at 375, 768, 1024, 1440 and interactions. https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40681861944
+- Deployed Pages browser regression of the refinement (before latest 18-second timeout fix): **304/304 PASS**. https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40682178984
+- Form timeout followup branch syntax/browser regression **PASS**. https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40682689339
+- PRs merged: https://github.com/atrezzostudiosv-spec/denton-fence/pull/2 and https://github.com/atrezzostudiosv-spec/denton-fence/pull/3
+- Earlier 54 original images accessible and 60/60 page-breakpoint visits passed live.
+- The **one** synthetic external provider POST was attempted, but FormSubmit did not respond within 35 seconds: https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40682491860. This is a failed delivery **verification**, not proof of mail delivery.
 
-## Important fixed content
-Denton Fence, LLC; phone 940-391-3338.
-Cliff Davis's 35+ years concerns his PERSONAL experience in fencing, NOT company age.
-Nine services are wood privacy, ornamental iron, chain link, ranch-style, vinyl, staining, repairs, driveway gates and gate operators. No historical specials are claimed current.
+## Open constraints before calling Phase 4 closed
+1. Verify real form submission acceptance and inbox receipt at the Atrezzo email. If FormSubmit remains unresponsive, select and connect a reliable alternate provider with user-controlled credentials. Do NOT show a fabricated success alert.
+2. Final manual visual inspection on physical devices, WCAG 2.2 AA focused audit, performance, complete Open Graph/production canonical and approved legal/privacy details.
+3. Business confirmation on service-area discrepancies, promotions, address and final recipient migration.
+4. Noindex stays until an explicit production publication decision.
 
-## Live smoke evidence
-Automated browser run PASS: https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40671506553
-Report: development/QA-LIVE-2026-10-28.md
-60 of 60 live route/width renders passed at 375/768/1024/1440 px; 54 of 54 image URLs loaded; menu, gallery filters and modal interactions passed; 0 failures.
-
-## Remaining critical checks
-- Verify original Jotform recipient and perform an authorized real submission (currently not verified).
-- Complete detailed visual review, full keyboard/screen-reader accessibility, performance and social preview; basic live page-width and interaction smoke already verified.
-- Verify service coverage, address, current promotions, business-approved legal/privacy content.
-- Resolve production canonical and Open Graph URLs on the eventual authorized domain.
-- Keep noindex until explicit production publication approval.
-
-## Next action
-Test original Jotform delivery and recipient with authorization; then complete deeper accessibility/performance/SEO QA and close Phase 4 if all acceptance gates pass. Do not repeat closed audit, strategy or Home design approval.
+## Immediate next action
+Confirm actual form-delivery reliability/receipt. Do not repeat closed audit, architecture or approved design work.
