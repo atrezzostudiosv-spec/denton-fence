@@ -1,5 +1,5 @@
 # Phase 3 — Denton Fence Home visual direction V1
-Status: **IN VISUAL VALIDATION**. This is a prototype, not an approved production website.
+Status: **VISUAL DESIGN APPROVED / CLOSED 2026-10-28**. User approved the Home V1 preview. This remains a design prototype, not an approved production website.
 
 ## One art-direction concept
 **Property Lines. Personal Pride.** A local fence contractor with a warm, robust, direct editorial character, not a luxury architecture label or generic contractor card template.
@@ -25,4 +25,4 @@ A local self-contained HTML/CSS/JS/WebP design preview was created alongside mob
 - No physical-device or public GitHub Pages verification yet.
 
 ## Quality gate
-Design requires explicit visual approval before being promoted to production code. Service pages, lead-capture backend, verified rights for public imagery, complete SEO/social cards and live deployment remain pending.
+Visual approval: **RECEIVED 2026-10-28** (‘aprobado’). Treat this Home composition, image roles, visual hierarchy, CTA placement and M2/CF rhythm as locked. Only justified technical/accessibility corrections or user-requested modifications are allowed. Service pages, lead-capture backend, verified rights for public imagery, complete SEO/social cards and live deployment remain pending.
