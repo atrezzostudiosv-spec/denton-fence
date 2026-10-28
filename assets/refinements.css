@@ -22,7 +22,7 @@
 .button-outline {background:rgba(0,0,0,.17)!important;border:1px solid rgba(255,255,255,.72)!important}
 .button-outline:hover {background:rgba(255,255,255,.13)!important}
 .button-text-light {padding-left:0!important;padding-right:0!important;min-height:auto!important}
-.ui-arrow {display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:middle}
+.ui-arrow {position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:middle}
 .ui-arrow::before {content:"";display:block;width:8px;height:8px;border-top:1.6px solid currentColor;border-right:1.6px solid currentColor;transform:translate(-1px,1px)}
 .ui-arrow::after {content:"";display:block;width:11px;height:1.6px;background:currentColor;transform:rotate(-45deg) translate(-6px,-3px);position:absolute}
 .button .ui-arrow,.header-cta .ui-arrow {position:relative;transition:transform .35s ease}
