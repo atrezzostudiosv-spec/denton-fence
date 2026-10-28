@@ -48,7 +48,7 @@ def main():
                       h1:document.querySelectorAll('h1').length,
                       sw:document.documentElement.scrollWidth,
                       noindex:!!document.querySelector('meta[name="robots"][content*="noindex"]'),
-                      broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth&&i.src).map(i=>i.src)
+                      broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth&&i.getAttribute('src')).map(i=>i.src)
                     })""")
                     check(response.status==200 and result["h1"]==1 and result["noindex"],str(width)+" "+route+" H1/noindex/HTTP")
                     check(result["sw"]<=width+2,str(width)+" "+route+" no horizontal overflow "+str(result["sw"]))
