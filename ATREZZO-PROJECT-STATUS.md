@@ -9,8 +9,8 @@ Atrezzo Studios creates, develops, audits and validates the site directly. No Ge
 | --- | --- | --- |
 | 1 Audit | CLOSED | Original six-page site, supplied ZIP, video and photographic archive reviewed. |
 | 2 Strategy / architecture | CLOSED FOR PROGRESSION | Fifteen planned URLs: six original pages and nine genuine service categories; SEO, copy direction, conversion and scroll score. User instructed to begin Phase 3. |
-| 3 Design | IN VALIDATION | Home V1 prototype created locally with original-site photography recoded to WebP; design score, desktop/mobile renders, and four-width Chromium audit. Awaiting visual approval. |
-| 4 Development | NOT STARTED | Design prototype is not a completed multipage production site. |
+| 3 Design | CLOSED — HOME APPROVED 2026-10-28 | User explicitly approved Home V1 visual composition and scroll. Design is frozen as the reference. Interior layouts will be adapted to their own content during Phase 4 without redesigning the Home. |
+| 4 Development | IN PROGRESS — PLANNING/SETUP | Begin conversion of approved Home prototype into a maintainable multipage frontend and development of interior pages. No code or public images pushed as part of approval recording. |
 | 5 Validation | NOT STARTED | Production domain, forms, performance, actual Pages environment not certified. |
 | 6 Delivery | NOT STARTED | Not published as an authorized client website. |
 
@@ -29,5 +29,8 @@ Demo remains noindex; original site's images cannot be redistributed publicly un
 ## Open commercial checks before production
 Promotions, service-area discrepancy, valid business address and phone, ownership of gallery images, Jotform destination and successful send, service details for gate operators/repairs/staining, legal policy.
 
+## Approved visual baseline — user decision on 2026-10-28
+User wrote **“aprobado”** in response to Home V1 preview. Lock its composition, approved real-image selection, branding, type hierarchy and native-scroll photo chapters. Only change with explicit request or a reproducible technical defect. This is approval of design, not permission to republish photographs from the original business on a public GitHub Pages demo, and not validation of forms or live functionality.
+
 ## Current next action
-Review the Home V1 artwork and scroll rhythm. Preserve approved compositions when moving into multipage frontend development.
+Build the approved Home as reusable frontend source, then implement interior pages without dropping verified source content. Keep prototype/demo noindex, do not upload original gallery imagery to this PUBLIC repository until rights are verified.
