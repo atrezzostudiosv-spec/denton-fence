@@ -1,0 +1,66 @@
+name: Import authorized Denton Fence imagery
+on:
+  push:
+    branches: [phase4-development]
+    paths:
+      - '.github/workflows/import-images.yml'
+      - 'scripts/import-original-images.py'
+      - 'assets/image-manifest.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: denton-fence-images
+  cancel-in-progress: false
+
+jobs:
+  import-images:
+    name: Download original gallery and commit optimized WebP
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout development branch
+        uses: actions/checkout@v4
+        with:
+          ref: phase4-development
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image encoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Import original-site photography and logo
+        run: python scripts/import-original-images.py
+      - name: Verify all references and file metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('.')
+          assets = root / 'assets' / 'images'
+          images = sorted(x for x in assets.iterdir() if x.suffix in {'.webp', '.png'})
+          expected = 54
+          assert len(images) == expected, f'Expected {expected} files; found {len(images)}'
+          manifest = json.loads((root / 'assets' / 'image-manifest.json').read_text())
+          for entry in manifest:
+              assert (assets / entry['file']).is_file(), entry['file']
+          html = list(root.rglob('index.html'))
+          assert len(html) == 15, f'Expected 15 routes, got {len(html)}'
+          for page in html:
+              assert 'noindex' in page.read_text().lower(), page
+          print('OK', len(images), 'images and', len(html), 'pages')
+          PY
+      - name: Commit optimized photos to development branch
+        run: |
+          git config user.name "atrezzo-assets-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/images/
+          if git diff --cached --quiet; then
+            echo "No image updates needed"
+            exit 0
+          fi
+          git commit -m "assets: import approved original fence photography as WebP"
+          git push origin HEAD:phase4-development

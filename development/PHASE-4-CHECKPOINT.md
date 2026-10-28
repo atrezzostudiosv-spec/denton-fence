@@ -1,5 +1,5 @@
 # Phase 4 — Denton Fence Implementation Checkpoint
-Date: 2026-10-28. Status: **IN PROGRESS (local multipage V1 built; public repo sync pending)**.
+Date: 2026-10-28. Status: **IN PROGRESS (all HTML/CSS/JS text pushed to GitHub development branch; image assets are pending)**.
 
 ## Actual working files
 A local downloadable source package was created in the ChatGPT conversation and includes:
@@ -14,6 +14,12 @@ A local downloadable source package was created in the ChatGPT conversation and 
 ## What was tested
 Local static asset/link and anchor checks on all 15 pages, plus Chromium rendering in memory of all pages at 375, 768, 1024 and 1440 px. No horizontal overflow or JavaScript exceptions in the exercised flows. Mobile menu, modal filter/dialog and reduced motion behavior were exercised.
 
+## GitHub synchronization verified 2026-10-28
+- Branch `phase4-development`: 15 HTML files, `assets/styles.css`, `assets/inner.css`, `assets/app.js`, `assets/inner.js`, `assets/image-manifest.json`.
+- The GitHub Git tree was inspected and confirmed to contain 15 HTML routes and zero photographic binaries. This is deliberate, not a claim that a deployed preview works.
+- Local source package still contains the exact image binaries. `main` remains the documentation-only branch; do not select development branch as GitHub Pages source yet.
+- In-memory Chromium checks rerun after source sync: 15 routes × 375, 768, 1024, 1440 px, no reported errors. HTTP navigation and form delivery are still not proven.
+
 ## Publication and sync constraints
 - This GitHub repository is currently **PUBLIC**. The original company's photographs/logo cannot be republished to a public repository without confirming rights. Therefore the full local ZIP with pictures is intentionally **not pushed** as an online demo.
 - Browser in this execution environment blocks direct local URL and localhost navigation, so the browser checks used in-memory rendering. Do not claim live GitHub Pages behavior is verified.
@@ -24,4 +30,4 @@ Local static asset/link and anchor checks on all 15 pages, plus Chromium renderi
 Home V1 approved by the user on 2026-10-28: keep visual design and scroll composition unchanged unless justified by verified defect or explicit new request.
 
 ## Next action
-Make GitHub source/asset synchronization safe (confirm reproduction rights or change repository visibility), then validate real Pages navigation, image delivery, contact form and cross-device responsive behavior.
+Confirm public demonstration/reproduction permission for original images and logo (or provide an authorized private review host), then push approved image binaries and validate real Pages navigation, image delivery, contact form and cross-device responsive behavior.
