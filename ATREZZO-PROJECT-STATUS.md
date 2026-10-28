@@ -1,36 +1,35 @@
-# Denton Fence — ATREZZO-PROJECT-STATUS
+# Denton Fence — ATREZZO PROJECT STATUS
 Updated: 2026-10-28
 
-## Production agreement
-Atrezzo Studios creates, develops, audits and validates the site directly. No Gemini handoff. Preserve verified commercial content and approved design decisions.
+## Phase ledger
+1. AUDIT — CLOSED. Original six-page site, original gallery and business facts reviewed.
+2. STRATEGY — CLOSED. Fifteen-page architecture and creative scroll score.
+3. DESIGN — CLOSED. Home V1 explicitly APPROVED by user; no unrequested composition changes.
+4. DEVELOPMENT — IN VALIDATION. 15 HTML routes, two CSS and two JS source files, original logo PNG and 53 optimized WebP images integrated in main via PR #1. GitHub Pages build and deploy actions succeeded. Direct live rendered browser QA is not yet verified.
+5. FINAL QA — PENDING. Live breakpoints, links/interactions, form receipt, accessibility, performance, full metadata.
+6. DELIVERY — PENDING. Client publication authorization and final launch have not been given; deployment remains a non-indexed development demo.
 
-## Phases
-| Phase | Status | Evidence |
-| --- | --- | --- |
-| 1 Audit | CLOSED | Original six-page site, supplied ZIP, video and photographic archive reviewed. |
-| 2 Strategy / architecture | CLOSED FOR PROGRESSION | Fifteen planned URLs: six original pages and nine genuine service categories; SEO, copy direction, conversion and scroll score. User instructed to begin Phase 3. |
-| 3 Design | CLOSED — HOME APPROVED 2026-10-28 | User explicitly approved Home V1 visual composition and scroll. Design is frozen as the reference. Interior layouts will be adapted to their own content during Phase 4 without redesigning the Home. |
-| 4 Development | IN PROGRESS — TEXT SOURCE SYNCHRONIZED | `phase4-development` contains all 15 HTML routes, 2 complete CSS stylesheets, 2 scripts, and source-photo manifest. The approved Home remains visually unchanged in source. Original photographs and logo are still local-only pending public reuse clearance; main has not been deployed with a broken preview. Repeated local in-memory four-width browser checks passed.
-| 5 Validation | NOT STARTED | Production domain, forms, performance, actual Pages environment not certified. |
-| 6 Delivery | NOT STARTED | Not published as an authorized client website. |
+## Verified deployment evidence
+Photo import workflow success: https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40670527163
+Pull request merged: https://github.com/atrezzostudiosv-spec/denton-fence/pull/1
+GitHub Pages build/deploy success: https://github.com/atrezzostudiosv-spec/denton-fence/actions/runs/40671000314
+GitHub deployment URL: https://atrezzostudiosv-spec.github.io/denton-fence/
+Main branch contains 15 HTML routes and 54 image files, 44 gallery, 9 Home, 1 original logo; the workflow verified counts. HTML contains noindex,nofollow,noarchive; robots.txt disallows crawling. Noindex does not make this URL private.
 
-## Fixed commercial source of truth
-Original website: https://dentonfence.net/
-Company: Denton Fence, LLC. Phone: 940-391-3338.
-Owner Cliff Davis has 35+ years of **personal industry experience**; never represent this as 35+ years of LLC trading.
-Published services: wood privacy, ornamental iron, chain link, ranch style, vinyl, staining, fence repair, driveway gates, gate operators.
-Original routes: /, /about-us/, /services/, /specials/, /gallery/, /contact/.
+## Authorization and sourcing
+User explicitly confirmed on 2026-10-28 that Atrezzo can reuse original Denton Fence website photographs for this public demo. The importer uses the original site and preserves image identities. Independent written third-party rights documentation was not audited; do not reuse this gallery for other customers.
 
-## Design direction
-Concept: Property Lines. Personal Pride.
-Warm/local and technical without fake luxury; original green and logo; real photographs; native-scroll editorial M2 with one short three-chapter desktop photography sequence.
-Demo remains noindex; original site's images cannot be redistributed publicly until permissions are checked.
+## Important fixed content
+Denton Fence, LLC; phone 940-391-3338.
+Cliff Davis's 35+ years concerns his PERSONAL experience in fencing, NOT company age.
+Nine services are wood privacy, ornamental iron, chain link, ranch-style, vinyl, staining, repairs, driveway gates and gate operators. No historical specials are claimed current.
 
-## Open commercial checks before production
-Promotions, service-area discrepancy, valid business address and phone, ownership of gallery images, Jotform destination and successful send, service details for gate operators/repairs/staining, legal policy.
+## Remaining critical checks
+- Verify original Jotform recipient and perform an authorized real submission (currently not verified).
+- Check live Pages rendering, image loading, navigation and keyboard interactions at 375, 768, 1024 and 1440 px.
+- Verify service coverage, address, current promotions, business-approved legal/privacy content.
+- Resolve production canonical and Open Graph URLs on the eventual authorized domain.
+- Keep noindex until explicit production publication approval.
 
-## Approved visual baseline — user decision on 2026-10-28
-User wrote **“aprobado”** in response to Home V1 preview. Lock its composition, approved real-image selection, branding, type hierarchy and native-scroll photo chapters. Only change with explicit request or a reproducible technical defect. This is approval of design, not permission to republish photographs from the original business on a public GitHub Pages demo, and not validation of forms or live functionality.
-
-## Current next action
-Confirm rights to reproduce the original gallery/logo in a public GitHub Pages demo, or arrange an authorized private delivery route. Then synchronize the 54 image files, verify their loading in an actual deployed browser at 375/768/1024/1440, and test the Jotform destination/delivery. Do not close Phase 4 or merge the incomplete dev branch into main.
+## Next action
+Carry out live Pages browser QA and authorized Jotform delivery test. Do not repeat closed audit, strategy or Home design approval.
