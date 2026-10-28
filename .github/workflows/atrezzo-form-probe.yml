@@ -1,0 +1,55 @@
+name: ATREZZO — one-time real form provider probe
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/atrezzo-form-probe.yml']
+permissions:
+  contents: read
+jobs:
+  provider-probe:
+    name: Submit one clearly labeled synthetic test to Atrezzo
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Test FormSubmit endpoint, without customer data
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.request
+          url='https://formsubmit.co/ajax/atrezzostudiosv@gmail.com'
+          payload={
+            'name':'Atrezzo Automated QA',
+            'email':'qa-test@example.com',
+            'service':'wood-privacy-fences',
+            'phone':'',
+            'location':'Denton, TX — synthetic test',
+            'message':'ATREZZO WEBSITE TEST 2026-10-28. This is one automated demo-form delivery check; no customer inquiry and no response required.',
+            'preview_consent':'yes',
+            'project_source':'Denton Fence design preview',
+            '_subject':'[ATREZZO TEST ONLY] Denton Fence form',
+            '_template':'table',
+            '_captcha':'false',
+            '_honey':'',
+            '_url':'https://atrezzostudiosv-spec.github.io/denton-fence/contact/'
+          }
+          data=json.dumps(payload).encode('utf8')
+          req=urllib.request.Request(url,data=data,method='POST',headers={'Content-Type':'application/json','Accept':'application/json','Origin':'https://atrezzostudiosv-spec.github.io','User-Agent':'Atrezzo QA Browser-Equivalent/1.0'})
+          try:
+              with urllib.request.urlopen(req,timeout=35) as r:
+                  raw=r.read(4000).decode('utf8','replace')
+                  status=r.status
+          except Exception as ex:
+              print('Provider request failed:',type(ex).__name__,str(ex))
+              raise SystemExit(1)
+          try:
+              body=json.loads(raw)
+          except ValueError:
+              print('Provider did not respond in JSON; HTTP',status)
+              raise SystemExit(1)
+          accepted=status==200 and str(body.get('success')).lower()=='true'
+          print('FormSubmit HTTP',status,'accepted',accepted)
+          print('Provider acknowledgement only, NOT proof of inbox delivery.')
+          if not accepted:
+              print('Provider message:',str(body.get('message'))[:300])
+              raise SystemExit(1)
+          PY
