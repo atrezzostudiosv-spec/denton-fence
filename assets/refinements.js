@@ -34,8 +34,10 @@ function attachForm(form){
    button.disabled=true;
    const data=Object.fromEntries(new FormData(form).entries());
    data._url=window.location.href;
+   const controller=new AbortController();
+   const timeout=setTimeout(()=>controller.abort(),18000);
    try{
-     const response=await fetch(AJAX,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});
+     const response=await fetch(AJAX,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data),signal:controller.signal});
      const body=await response.json();
      if(!response.ok||!(body.success===true||String(body.success).toLowerCase()==='true'))throw Error('Not accepted');
      form.reset();
@@ -44,7 +46,7 @@ function attachForm(form){
    }catch(e){
      status.dataset.state='error';
      status.textContent='We could not confirm submission. Your information is still here; please try again or use the business phone number.';
-   }finally{button.disabled=false}
+   }finally{clearTimeout(timeout);button.disabled=false}
  });
 }
 function buildModal(){
