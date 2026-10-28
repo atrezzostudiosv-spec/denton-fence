@@ -1,0 +1,45 @@
+name: QA — Denton Fence deployed refinements
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qa-refinements-live.yml'
+      - 'scripts/qa_refinements.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-refinement-qa:
+    name: Verify live Pages responsive scroll and modal
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          python -m pip install --disable-pip-version-check playwright
+          python -m playwright install --with-deps chromium
+      - name: Check updated deployment is visible
+        run: |
+          for i in $(seq 1 50); do
+            if curl --fail --silent --show-error "https://atrezzostudiosv-spec.github.io/denton-fence/assets/refinements.css" | grep -q "Authorised refinement pass"; then
+              echo "Latest refinement is online"; exit 0
+            fi
+            sleep 4
+          done
+          echo "Refinement file did not become visible" >&2
+          exit 1
+      - name: Live test 15 pages, mobile scroll, modal and mocked form
+        env:
+          ATREZZO_LIVE_BASE: https://atrezzostudiosv-spec.github.io/denton-fence/
+        run: python scripts/qa_refinements.py
+      - name: Upload QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: denton-fence-live-refinement-results
+          path: qa-refinement-results.json
+          if-no-files-found: warn
