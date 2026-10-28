@@ -25,17 +25,35 @@
   // Native scrolling is never intercepted; photo transforms are enhancement only.
   const chapters=[...document.querySelectorAll('[data-zoom]')];
   if(!chapters.length)return;
-  const canZoom=()=>!reducedMotion.matches&&window.matchMedia('(min-width: 1024px)').matches;
+  // Desktop uses a slightly deeper zoom; tablet/mobile have a perceptible,
+  // reduced-scale, native-scroll version with no sticky/gesture interception.
+  const canZoom=()=>!reducedMotion.matches;
   let ticking=false;
   const draw=()=>{
     ticking=false;
-    if(!canZoom()){chapters.forEach(section=>section.style.removeProperty('--photo-scale'));return}
+    const enabled=canZoom();
     const h=window.innerHeight;
+    const width=window.innerWidth;
     for(const section of chapters){
+      if(!enabled){
+        section.style.removeProperty('--photo-scale');
+        section.style.removeProperty('--text-shift');
+        section.style.removeProperty('--chapter-opacity');
+        continue;
+      }
       const box=section.getBoundingClientRect();
       if(box.bottom<0||box.top>h)continue;
       const progress=Math.min(1,Math.max(0,(h-box.top)/(h+box.height)));
-      section.style.setProperty('--photo-scale',(1.025+0.055*progress).toFixed(4));
+      const base=width<768?1.014:width<1024?1.019:1.025;
+      const distance=width<768?.048:width<1024?.051:.055;
+      section.style.setProperty('--photo-scale',(base+distance*progress).toFixed(4));
+      if(width<1024){
+        section.style.setProperty('--text-shift',(12*(1-progress)).toFixed(2));
+        section.style.setProperty('--chapter-opacity',Math.min(1,.94+.06*progress*2).toFixed(3));
+      }else{
+        section.style.removeProperty('--text-shift');
+        section.style.removeProperty('--chapter-opacity');
+      }
     }
   };
   const onScroll=()=>{if(!ticking){ticking=true;requestAnimationFrame(draw)}};
