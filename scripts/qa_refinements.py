@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Automated user-approved Phase 4 refinement QA, no real emails are sent."""
 from __future__ import annotations
-import json, re, socket, threading
+import json, os, re, socket, threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -33,7 +33,7 @@ def main():
     http=ThreadingHTTPServer(("127.0.0.1",0),QuietHandler)
     thread=threading.Thread(target=http.serve_forever,daemon=True)
     thread.start()
-    base="http://127.0.0.1:"+str(http.server_address[1])+"/"
+    base=os.environ.get("ATREZZO_LIVE_BASE", "http://127.0.0.1:"+str(http.server_address[1])+"/")
     try:
         with sync_playwright() as p:
             browser=p.chromium.launch(headless=True,args=["--no-sandbox"])
