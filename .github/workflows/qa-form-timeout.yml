@@ -1,0 +1,30 @@
+name: QA — FormSubmit timeout safeguard
+on:
+  push:
+    branches: [phase4-form-timeout-safety]
+    paths:
+      - '.github/workflows/qa-form-timeout.yml'
+      - 'assets/refinements.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  safeguard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JS syntax and timeout cleanup
+        run: |
+          node --check assets/refinements.js
+          grep -q "signal:controller.signal" assets/refinements.js
+          grep -q "clearTimeout(timeout)" assets/refinements.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test browser
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Validate 15 routes, form flow and mobile image scroll
+        run: python scripts/qa_refinements.py
